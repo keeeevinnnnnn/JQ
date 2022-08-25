@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>promise</title>
+    </head>
+    <body>
+        <script>
+            // Promise 是為了改寫 callback function
+            // 建立 Promise 要新增一個 new。 ( 自帶兩個參數[成功,失敗] )
+            const a = new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    // 這裡的 resolve 裡的物件 會傳給後面的 a.then()的裡面參數，參數名字是自訂
+                    resolve({ username: "foo", age: 28 });
+                }, 3000);
+
+                // DO ajax
+                if(error){
+                    reject('msg:',error)
+                }
+                else{
+                    resolve({ username: "foo", age: 28 });
+                }
+            });
+
+            // 這裡的 data = { username: "foo", age: 28 }
+            a.then((data) => {
+                console.log(data);
+
+                // ...data = 拿到原本的資料 ({ username: "foo", age: 28 })
+                // 物件的key不能重複，物件的key都會後蓋前
+                // 後面的key給他一個新的值是 data.age * 2 = 56；
+                // 蓋掉前面後，現在的 data就是 { username: "foo", age: 56 }
+                // 如果要一直修改值記得要 return
+                return { ...data, age: data.age * 2 };
+        
+            }).then(function (age2) {
+                console.log("age2:", age2);
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            .box {
+                width: 200px;
+                height: 200px;
+                background-color: #faf;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="box"></div>
+
+        <script src="./js/jquery-3.6.0.min.js"></script>
+        <script>
+            // 點擊 (按下與放開一起)
+            $(".box").click(function () {
+                console.log("box click.");
+            });
+
+            // 連續點擊
+            $(".box").dblclick(function () {
+                console.log("box dblclick.");
+            });
+
+            // 滑鼠右鍵
+            $(".box").contextmenu(function () {
+                console.log("box contextmenu.");
+            });
+
+            // 滑鼠點擊下去就觸發
+            $(".box").mousedown(function () {
+                console.log("box mousedown.");
+            });
+
+            // 滑鼠點擊放開觸發
+            $(".box").mouseup(function () {
+                console.log("box mouseup.");
+            });
+
+            // hover (滑鼠移入或移出都會觸發)，放兩個 function 各別偵測滑入或滑出
+            $(".box").hover(
+                function () {
+                    console.log("box hover.");
+                },
+                function () {
+                    //偵測滑出
+                }
+            );
+        </script>
+    </body>
+</html>

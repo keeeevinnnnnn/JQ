@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>data</title>
+    </head>
+    <body>
+        <div class="box" data-price="200" data-product-name="pen"></div>
+
+        <script src="./js/jquery-3.6.0.min.js"></script>
+        <script>
+            // php的資料存到html裡(用echo的方法)，可以再從js拿到這筆資料。
+            $(".box").data("price", "500");
+            $(".box").data("product-name", "pencil");
+            console.log("price", $(".box").data("price"));
+            console.log("price", $(".box").data("product-name"));
+        </script>
+    </body>
+</html>

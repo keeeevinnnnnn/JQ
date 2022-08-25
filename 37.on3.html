@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>on3</title>
+        <style>
+            .box {
+                width: 200px;
+                height: 200px;
+                background-color: #faf;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 id="showAction"></h1>
+        <div class="box"></div>
+
+        <script src="./js/jquery-3.6.0.min.js"></script>
+        <script>
+            // 不同事件觸發同一個動作時，用 on 綁定的事件，沒有 hover，取而代之的是用 mouseenter ＆ mouseleave
+            $(".box").on("click mouseenter mouseleave", function () {
+                //do something
+                console.log("do something");
+            });
+        </script>
+    </body>
+</html>
